@@ -31,47 +31,22 @@ class UpdateActivity : AppCompatActivity() {
     private var picture:String?=null
     private var email:String?=null
 
-//    companion object{
-//        val TAG ="UpdateActivity"
-//    }
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update)
 
-//        etPicture = root.findViewById(R.id.profile_pic) as ImageView
-//        Picasso.get().load(profLink.toString()).into(profPic)
+
 
            initialise()
 
 
-//        ib_profile_pic.setOnClickListener {
-//            Log.d(TAG, "Try to show photo selector")
-//
-//            val intent = Intent(Intent.ACTION_PICK)
-//            intent.type = "image/*"
-//            startActivityForResult(intent, 0)
-//        }
 
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (requestCode == 0 && resultCode == Activity.RESULT_OK && data != null) {
-//            // proceed and check what the selected image was....
-//            Log.d(TAG, "Photo was selected")
-//
-//            pictureUrl = data.data
-//
-//            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, pictureUrl)
-//
-//            selectPhoto_imageview_register.setImageBitmap(bitmap)
-//
-//            ib_profile_pic.alpha = 0f
-//        }
-//    }
+
 
     private fun initialise(){
 
@@ -93,7 +68,6 @@ class UpdateActivity : AppCompatActivity() {
 
         //3. reference them together
         aName = up_username.text.toString()
-        //picture = etPicture?.toString()
 
 
             mUserReference.addValueEventListener(object : ValueEventListener {
@@ -105,8 +79,6 @@ class UpdateActivity : AppCompatActivity() {
                     editProfile.setOnClickListener {
 
                         //update name set here
-                        //if u want to keep the original value need 'mUser' which reference to FirebaseAuth of current user
-                        //if u want to set a value, u need to declare two things above
                         var user = Users(mUser.email.toString(), name!!.text.toString(),picture.toString())
 
                         mUserReference.setValue(user)

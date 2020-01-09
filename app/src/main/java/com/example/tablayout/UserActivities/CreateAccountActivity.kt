@@ -3,7 +3,9 @@
 package com.example.tablayout.UserActivities
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.ProgressDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +18,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.addCallback
 import com.example.tablayout.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -56,6 +59,8 @@ class CreateAccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.create_user_activity)
 
+
+
         initialise()
 
                 profilePic.setOnClickListener {
@@ -89,7 +94,9 @@ class CreateAccountActivity : AppCompatActivity() {
         }
 
         btnSignIn!!.setOnClickListener {
-            startActivity(Intent(this@CreateAccountActivity, LoginActivity::class.java))
+
+            onBackPressed()
+           // startActivity(Intent(this@CreateAccountActivity, LoginActivity::class.java))
         }
     }
 

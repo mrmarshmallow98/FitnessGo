@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.tablayout.R
 import com.example.tablayout.Timer
 
@@ -25,7 +26,6 @@ class WorkoutContent : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_workout_content)
 
-        //Log.d("aa", intent.getStringExtra("id"))
         mDatabase = FirebaseDatabase.getInstance().getReference("Workout").child(intent.getStringExtra("id")).child("workoutDetail")
 
         mRecyclerView = findViewById(R.id.listWorkout)
@@ -49,8 +49,9 @@ class WorkoutContent : AppCompatActivity() {
 
                 viewHolder?.itemView?.exercise_id?.text=model?.eID
                 viewHolder?.itemView?.exerciseDesc?.text=model?.exercise
-                viewHolder?.itemView?.link?.text=model?.link
-
+                Glide.with(viewHolder?.itemView!!.context)
+                    .load(model?.link)
+                    .into(viewHolder?.itemView?.exerciseImg)
 
             }
 
@@ -67,7 +68,7 @@ class WorkoutContent : AppCompatActivity() {
 
 
                 val intent = Intent(itemView.context, Timer::class.java)
-                intent.putExtra("link",itemView.link.text)
+                intent.putExtra("eid",itemView.exercise_id.text)
                 itemView.context.startActivity(intent)
 
             }

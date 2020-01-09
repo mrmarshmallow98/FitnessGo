@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">フィットネスゴー</string>
+    <string name="tab1">いい結果になる</string>
+    <string name="tab2">統計</string>
+    <string name="tab3">プロフィール</string>
+    <string name="username">ユーザー名</string>
+    <string name="email">Eメール</string>
+    <string name="password">パスワード</string>
+    <string name="signUp">サインアップ</string>
+    <string name="signIn">サインイン</string>
+    <string name="signInRedirect">口座がないのですか？</string>
+    <string name="signUpRedirect">すでにアカウントをお持ちですか？</string>
+    <string name="timer">タイマー</string>
+    <string name="logout">サインアウト</string>
+    <string name="txtEmail">Eメール</string>
+    <string name="send_password_reset_email">メールでパスワードをリセット</string>
+    <string name="fpassword">パスワードをお忘れですか?</string>
+    <string name="emailV">メール確認済み</string>
+    <string name="userProfilePic">プロフィールの写真</string>
+    <string name="editProfile">プロファイル編集</string>
+    <string name="signOut">サインアウト</string>
+    <string name="forgotPassword">パスワードをお忘れですか</string>
+    <string name="register">登録</string>
+    <string name="reset">メールアドレスを入力してパスワードをリセットしてください</string>
+    <string name="saveChanges">変更内容を保存</string>
+    <string name="workoutName">トレーニング名</string>
+    <string name="workoutDescription">トレーニングの説明</string>
+    <string name="fitness">フィットネスは一歩先</string>
+    <string name="title_activity_timer">タイマー</string>
+    <string name="link">リンク</string>
+    <string name="zero">0</string>
+    <string name="steps">歩数</string>
+
+</resources>

@@ -10,7 +10,6 @@ import com.example.tablayout.ui.main.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 
-    private var signnOut: MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

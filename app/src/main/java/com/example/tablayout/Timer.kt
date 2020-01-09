@@ -61,22 +61,19 @@ class Timer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
-        //setSupportActionBar(toolbar)
 
-        //supportActionBar?.setIcon(R.drawable.ic_timer)
-        //supportActionBar?.title="         Timer"
 
         val callback = this.onBackPressedDispatcher.addCallback(this) {
             // Handle the back button event
             val builder = AlertDialog.Builder(this@Timer)
 
             builder.setTitle("Are you sure?")
-            builder.setMessage("Do you really wan to give up? ")
-            builder.setPositiveButton("Yes", { dialogInterface: DialogInterface, i: Int ->
+            builder.setMessage("Do you really want to give up? ")
+            builder.setNegativeButton("Yes", { dialogInterface: DialogInterface, i: Int ->
                 finish()
                 onTimerFinished()
             })
-            builder.setNegativeButton("No",{ dialogInterface: DialogInterface, i: Int -> })
+            builder.setPositiveButton("No",{ dialogInterface: DialogInterface, i: Int -> })
             builder.show()
 
         }

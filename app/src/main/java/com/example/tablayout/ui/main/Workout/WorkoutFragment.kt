@@ -31,7 +31,6 @@ class WorkoutFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         workoutViewModel=ViewModelProviders.of(this).get(WorkoutViewModel::class.java).apply {
-            //setIndex(arguments?.getInt(ARG_SECTION_NUMBER)?:1)
 
 
         }
@@ -50,7 +49,6 @@ class WorkoutFragment : Fragment() {
         mRecyclerView = root.findViewById(R.id.listView)
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.setLayoutManager(LinearLayoutManager(context))
-        //mButton = root.findViewById(R.id.exerciseItem)
         iv = root.findViewById(R.id.workoutImg)
         logRecyclerView()
 
@@ -58,11 +56,6 @@ class WorkoutFragment : Fragment() {
 
 
 
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//        viewModel = ViewModelProviders.of(this).get(WorkoutViewModel::class.java)
-//        // TODO: Use the ViewModel
-//    }
 
     private fun logRecyclerView(){
 
@@ -106,28 +99,7 @@ class WorkoutFragment : Fragment() {
     }
 
 
-//        companion object {
-//        /**
-//         * The fragment argument representing the section number for this
-//         * fragment.
-//         */
-//        private const val ARG_SECTION_NUMBER = "section_number"
-//
-//        /**
-//         * Returns a new instance of this fragment for the given section
-//         * number.
-//         */
-//
-//
-//        @JvmStatic
-//        fun newInstance(sectionNumber: Int): WorkoutFragment {
-//            return WorkoutFragment().apply {
-//                arguments = Bundle().apply {
-//                    putInt(ARG_SECTION_NUMBER, sectionNumber)
-//                }
-//            }
-//        }
-//    }
+
 
 }
 

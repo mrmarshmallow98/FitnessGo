@@ -2,7 +2,9 @@
 
 package com.example.tablayout.UserActivities
 
+import android.app.AlertDialog
 import android.app.ProgressDialog
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +15,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.addCallback
 import com.example.tablayout.MainActivity
 import com.example.tablayout.R
 import com.google.firebase.auth.FirebaseAuth
@@ -37,7 +40,22 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
 
+        val callback = this.onBackPressedDispatcher.addCallback(this) {
+            // Handle the back button event
+            val builder = AlertDialog.Builder(this@LoginActivity)
+
+            builder.setTitle("Are you sure?")
+            builder.setMessage("Do you really want to quit? ")
+            builder.setNegativeButton("Yes", { dialogInterface: DialogInterface, i: Int ->
+                finish()
+            })
+            builder.setPositiveButton("No",{ dialogInterface: DialogInterface, i: Int -> })
+            builder.show()
+
+        }
+
         initialise()
+
 
     }
 
@@ -50,12 +68,17 @@ class LoginActivity : AppCompatActivity() {
         mProgressBar = ProgressDialog(this)
         mAuth = FirebaseAuth.getInstance()
         tvForgotPassword!!
-            .setOnClickListener { startActivity(Intent(this@LoginActivity,
-                ForgotPasswordActivity::class.java)) }
+            .setOnClickListener {
+                startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
+            }
+
         btnCreateAccount!!
-            .setOnClickListener { startActivity(Intent(this@LoginActivity,
-                CreateAccountActivity::class.java)) }
-        btnLogin!!.setOnClickListener { loginUser() }
+            .setOnClickListener {
+                startActivity(Intent(this@LoginActivity, CreateAccountActivity::class.java))
+            }
+        btnLogin!!.setOnClickListener {
+            loginUser()
+        }
     }
 
     private fun loginUser() {
